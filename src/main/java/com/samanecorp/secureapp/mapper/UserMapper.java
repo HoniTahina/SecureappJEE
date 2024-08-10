@@ -1,24 +1,22 @@
 package com.samanecorp.secureapp.mapper;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.samanecorp.secureapp.dto.UserDto;
 import com.samanecorp.secureapp.entities.UserEntity;
 
 public class UserMapper {
-    public static UserDto toDTO(UserEntity entity) {
-        UserDto dto = new UserDto();
-        dto.setId(entity.getId());
-        dto.setEmail(entity.getEmail());
-        dto.setPassword(entity.getPassword());
-        dto.setState(entity.isState());
-        return dto;
-    }
+	public static List<UserDto> listUserEntityToListUserDto(List<UserEntity> users) {
+		return users.stream().map(user -> toUserDto(user)).collect(Collectors.toList());
+	}
 
-    public static UserEntity toEntity(UserDto dto) {
-        UserEntity entity = new UserEntity();
-        entity.setId(dto.getId());
-        entity.setEmail(dto.getEmail());
-        entity.setPassword(dto.getPassword());
-        entity.setState(dto.isState());
-        return entity;
-    }
+	public static UserDto toUserDto(UserEntity user) {
+		return new UserDto(user.getId(), user.getEmail(), user.getPassword(), user.isState());
+	}
+
+	public static UserEntity toUserEntity(UserDto user) {
+
+		return new UserEntity(user.getId(), user.getEmail(), user.getPassword(), user.isState());
+	}
 }

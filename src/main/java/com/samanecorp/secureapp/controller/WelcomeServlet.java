@@ -10,30 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class WelcomeServlet
  */
-@WebServlet(name = "welcome", value =  "/welcome")
+@WebServlet(name = "welcome", value = "/welcome")
 public class WelcomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public WelcomeServlet() {
-        // TODO Auto-generated constructor stub
-    }
-
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Default constructor.
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("welcome.jsp").forward(request, response);
+	public WelcomeServlet() {
+		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("WEB-INF/jsp/welcome.jsp").forward(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		super.doPost(req, resp);
 	}
 
 }

@@ -39,15 +39,24 @@ public class UserDto {
 		this.state = state;
 	}
 
-	public UserDto(long id, String email, boolean state) {
+	public UserDto(long id, String email, String password, boolean state) {
 		super();
 		this.id = id;
 		this.email = email;
+		this.password = password;
+		this.state = state;
+	}
+
+	public UserDto(String email, String password, boolean state) {
+		super();
+		this.email = email;
+		this.password = password;
 		this.state = state;
 	}
 
 	public UserDto() {
 		super();
 	}
+	
 
 }

@@ -13,23 +13,20 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "logout", value = "/logout")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LogoutServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.getSession().invalidate();
-		request.getSession().setAttribute("username", null);
-		response.sendRedirect("login");
+	public LogoutServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getSession().invalidate();
+		req.getSession().setAttribute("username", null);
+		resp.sendRedirect("login");
 	}
 
 }

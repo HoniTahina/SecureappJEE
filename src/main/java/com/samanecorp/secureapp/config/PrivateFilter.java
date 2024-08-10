@@ -1,3 +1,4 @@
+
 package com.samanecorp.secureapp.config;
 
 import java.io.IOException;
@@ -18,7 +19,6 @@ public class PrivateFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-	
 
 	}
 
@@ -34,18 +34,18 @@ public class PrivateFilter implements Filter {
 		String chemin = req.getServletPath();
 		// on r´ecup`ere la m´ethode HTTP utilis´ee (GET ou POST)
 		String method = req.getMethod();
-		if (username != null || chemin.equals("/") || chemin.equals("/login") || chemin.equals("/sigup")
+		if (username != null || chemin.equals("/") || chemin.equals("/login") || chemin.equals("/signup")
 				|| chemin.equals("/logout") || chemin.equals("/index.jsp")
 				|| chemin.equals("/login") && method.equalsIgnoreCase("POST")
-				|| chemin.equals("/singup") && method.equalsIgnoreCase("POST") || chemin.startsWith("/public/"))
+				|| chemin.equals("/signup") && method.equalsIgnoreCase("POST") || chemin.startsWith("/public/"))
 			chain.doFilter(request, response);
 		else
-			res.sendRedirect(req.getContextPath());// re
+			res.sendRedirect(req.getContextPath());
+
 	}
 
 	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
+	public void destroy() { // TODO Auto-generated method stub
 
 	}
 

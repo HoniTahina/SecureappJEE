@@ -11,9 +11,20 @@
 		<servlet-name>AdminServlet</servlet-name>
 		<servlet-class>com.samanecorp.secureapp.controller.AdminServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>Admin</display-name>
+		<servlet-name>Admin</servlet-name>
+		<servlet-class>com.samanecorp.secureapp.controller.Admin</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>AdminServlet</servlet-name>
 		<url-pattern>/AdminServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Admin</servlet-name>
+		<url-pattern>/Admin</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

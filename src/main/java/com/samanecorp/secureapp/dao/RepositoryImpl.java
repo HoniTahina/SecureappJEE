@@ -1,4 +1,4 @@
-package com.samanecorp.secureapp.controller;
+package com.samanecorp.secureapp.dao;
 
 import java.util.List;
 
@@ -12,11 +12,7 @@ import org.hibernate.Transaction;
 import com.samanecorp.secureapp.config.HibernateUtil;
 
 public class RepositoryImpl<T> implements Repository<T> {
-	protected void name() {
-
-	}
-
-	protected Session session = HibernateUtil.getSessionFactory().openSession();
+	private Session session = HibernateUtil.getSessionFactory().openSession();
 	Transaction transaction = null;
 
 	@Override
@@ -33,7 +29,6 @@ public class RepositoryImpl<T> implements Repository<T> {
 
 	@Override
 	public boolean delete(long id, T t) {
-
 		try {
 			transaction = session.beginTransaction();
 			session.delete(session.get(t.getClass(), id));
@@ -59,7 +54,6 @@ public class RepositoryImpl<T> implements Repository<T> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> list(T t) {
-		// Utilisation de l'API criteria
 		CriteriaBuilder cb = session.getCriteriaBuilder();
 
 		CriteriaQuery<T> cq = (CriteriaQuery<T>) cb.createQuery(t.getClass());
@@ -67,19 +61,12 @@ public class RepositoryImpl<T> implements Repository<T> {
 		cq.select(root);
 
 		return session.createQuery(cq).getResultList();
-
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public T get(long id, T t) {
-
 		return (T) session.get(t.getClass(), id);
 	}
 
-	@Override
-	public T get(String id, T t) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

@@ -31,22 +31,38 @@
 				</div>
 				<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
 					<form action="login" method="post">
-
-						<div class="mb-3">
-							<label for="exampleInputEmail1" class="form-label">Email</label>
-							<input type="text" name="email" class="form-control"
-								id="exampleInputEmail1" aria-describedby="emailHelp">
+						<!-- Email input -->
+						<div data-mdb-input-init class="form-outline mb-4">
+							<input type="email" id="form1Example13" name="email"
+								class="form-control form-control-lg" /> <label
+								class="form-label" for="form1Example13">Email address</label>
 						</div>
-						<div class="mb-3">
-							<label for="exampleInputPassword1" class="form-label">Password</label>
-							<input type="password" name="password" class="form-control"
-								id="exampleInputPassword1">
+
+						<!-- Password input -->
+						<div data-mdb-input-init class="form-outline mb-4">
+							<input type="password" id="form1Example23" name="password"
+								class="form-control form-control-lg" /> <label
+								class="form-label" for="form1Example23">Password</label>
+						</div>
+
+						<div class="d-flex justify-content-around align-items-center mb-4">
+							<!-- Checkbox -->
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value=""
+									id="form1Example3" checked /> <label class="form-check-label"
+									for="form1Example3"> Remember me </label>
+							</div>
+							<a href="#!">Forgot password?</a>
 						</div>
 						<p class="mb-5 pb-lg-2" style="color: #393f81;">
 							Don't have an account? <a href="signup" style="color: #386BCC;">Register
 								here</a>
 						</p>
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<!-- Submit button -->
+						<button type="submit" data-mdb-button-init data-mdb-ripple-init
+							class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+						<div class="divider d-flex align-items-center my-4">
 					</form>
 				</div>
 			</div>
