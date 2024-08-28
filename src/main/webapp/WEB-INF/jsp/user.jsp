@@ -48,7 +48,12 @@
 				<tr>
 					<th scope="row">${user.id}</th>
 					<td>${user.email}</td>
-					<td>${user.state}</td>
+					<u:if test="${user.state == true}">
+						<td>Activé</td>
+					</u:if>
+					<u:if test="${user.state == false}">
+						<td>Desactivé</td>
+					</u:if>
 				</tr>
 			</u:forEach>
 		</tbody>

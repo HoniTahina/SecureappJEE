@@ -48,17 +48,18 @@
 													id="exampleInputPassword1">
 											</div>
 											<div class="mb-3">
-												<label for="exampleInputPassword1" class="form-label">State</label>
-												<input type="text" name="state" class="form-control"
-													id="exampleInputPassword1">
+												<label class="form-label">State</label> <select
+													name="state" class="form-control">
+													<option value="true">activé</option>
+													<option value="false">desactivé</option>
+												</select>
 											</div>
 											<div class="form-check d-flex justify-content-center mb-5">
 												<input class="form-check-input me-2" type="checkbox"
 													value="" id="form2Example3c" /> <label
 													class="form-check-label" for="form2Example3"> I
 													agree all statements in <a href="#!">Terms of service</a>
-												</label> <a href="login" class="btn btn-secondary">Back
-													to Login</a>
+												</label> <a href="login" class="btn btn-secondary">Back to Login</a>
 											</div>
 											<button type="submit" class="btn btn-primary">Submit</button>
 										</form>
